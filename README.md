@@ -24,9 +24,9 @@ you can use `LocalGHOWLAuthenticator` to handle both local and GitHub
 auth).
 
 You also must have set the environment variable
-`GITHUB_ORGANIZATION_LIST` to be a comma-separated list of organizations
+`GITHUB_ORGANIZATION_WHITELIST` to be a comma-separated list of organizations
 whose members you want to permit,
-e.g. `GITHUB_ORGANIZATION_LIST=lsst,lsst-sqre`.
+e.g. `GITHUB_ORGANIZATION_WHITELIST=lsst,lsst-sqre`.
 
 The rest of the instructions are the same as those found at
 https://github.com/jupyterhub/oauthenticator (that is, you still need a
