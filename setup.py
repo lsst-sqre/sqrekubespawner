@@ -4,12 +4,12 @@ import os
 import codecs
 from setuptools import setup, find_packages
 
-PACKAGENAME = 'sqre-ghowlauth'
-DESCRIPTION = 'JupyterHub authenticator that uses GH orgs as whitelists'
+PACKAGENAME = 'sqrekubespawner'
+DESCRIPTION = 'JupyterHub KubeSpawner, SQRE edition'
 AUTHOR = 'Adam Thornton'
-AUTHOR_EMAIL = 'frossie@lsst.org'
-URL = 'https://github.com/lsst-sqre/ghowlauth'
-VERSION = '0.0.2'
+AUTHOR_EMAIL = 'athornton@lsst.org'
+URL = 'https://github.com/lsst-sqre/sqrekubespawner'
+VERSION = '0.0.1'
 LICENSE = 'MIT'
 
 
@@ -42,7 +42,7 @@ setup(
     keywords='lsst',
     packages=find_packages(exclude=['docs', 'tests*']),
     install_requires=[
-        'oauthenticator>=0.5.1',
+        'jupyterhub-kubespawner>=0.5.1',
         'tornado>=4.1'
     ]
 )
