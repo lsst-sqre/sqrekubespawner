@@ -1,33 +1,23 @@
-# sqre-ghowlauth
+# sqrekubespawner
 
-GitHub Organization WhiteList Authentication
-
-JupyterHub authentication that uses GitHub OAuth2 but additionally
-checks user org membership against a list defined in the environment
-variable `GITHUB_ORGANIZATION_WHITELIST`.
+SQuaRE edition of jupyterhub-kubespawner.  Uses the GitHub userid as the
+UID, if we have it (which means, if we used the GHOWL authenticator to
+log in)
 
 ## Installation
 
-sqre-ghowlauth runs on Python 3.3 or greater. You can install it with
+sqrekubespawner runs on Python 3.3 or greater. You can install it with
 
 ```bash
-pip install sqre-ghowlauth
+pip install sqrekubespawner
 ```
 
-This will also install dependencies: `jupyterhub` and `tornado`.
+This will also install the dependency: `jupyterhub-kubespawner`.
 
 ## Example usage
 
 Your `jupyterhub_config.py` file should contain
-`c.JupyterHub.authenticator_class = 'ghowlauth.GHOWLAuthenticator'` (or
-you can use `LocalGHOWLAuthenticator` to handle both local and GitHub
-auth).
+`c.JupyterHub.spawner_class = 'sqrekubespawner.SQREKubeSpawner`.
 
-You also must have set the environment variable
-`GITHUB_ORGANIZATION_WHITELIST` to be a comma-separated list of organizations
-whose members you want to permit,
-e.g. `GITHUB_ORGANIZATION_WHITELIST=lsst,lsst-sqre`.
+It otherwise behaves identically to the KubeSpawner spawner class.
 
-The rest of the instructions are the same as those found at
-https://github.com/jupyterhub/oauthenticator (that is, you still need a
-callback URL, a client ID, and a client secret).
